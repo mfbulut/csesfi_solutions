@@ -11,11 +11,15 @@ int main() {
     i64 n;
     scanf("%lld", &n);
 
-    range(i, 0, 10) {
-        printf("%lld ", i);
+    while(n != 1) {
+        printf("%lld ", n);
+
+        if(n % 2 == 0) {
+            n = n / 2;
+        } else {
+            n = n * 3 + 1;
+        }
     }
 
-    string my_array[] = {"apple", "banana", "orange", "grapes"};
-
-    printf("%lld ", len(my_array));
+    printf("%lld ", n);
 }
