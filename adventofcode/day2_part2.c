@@ -13,6 +13,11 @@ i64 digits(i64 x) {
     return log + 1;
 }
 
+i64 is_divisable(i64 x, i64 y) {
+    i64 num = x / y;
+    return x == num * y;
+}
+
 static const i64 pow[19] = {
     1,
     10,
@@ -35,6 +40,19 @@ static const i64 pow[19] = {
     1000000000000000000
 };
 
+int has_sequence(i64 number, i64 digit_count, i64 repatation){
+    i64 num = pow[digit_count];
+    i64 right = number % num;
+
+    i64 new = 0;
+    range(i, 1, repatation) {
+        new *= num;
+        new += right;
+    }
+
+    return number == new;
+}
+
 int main() {
     FILE *fp = fopen("adventofcode/day2.txt", "r");
 
@@ -49,21 +67,19 @@ int main() {
 
         range(i, start, end) {
             i64 digit_count = digits(i);
-            if(digit_count % 2 == 1) continue;
 
-            i64 num = pow[digit_count / 2];
-            i64 left = i / num;
-            i64 right = i - left * num;
-
-            if(left == right) {
-                result += i;
-                // printf("%lld\n", i);
+            range(j, 1, digit_count / 2) {
+                if(is_divisable(digit_count, j) && has_sequence(i, j, digit_count / j)) {
+                    result += i;
+                    printf("%lld\n", i);
+                    break;
+                }
             }
-
         }
-
 
     } while(fscanf(fp, "%c", &comma) == 1);
 
-    printf("%lld\n", result);
+    printf("\n%lld\n", result);
 }
+
+// 38262920235
