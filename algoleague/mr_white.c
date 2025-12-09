@@ -3,27 +3,28 @@
 
 #pragma GCC optimize("O3")
 
-#define range(i,a,b) for(int i=(a);(i<(b));(i)++)
-int max(int a, int b) { return a > b ? a : b; }
-int input() { int n; scanf("%d", &n); return n; }
+typedef long long i64;
+#define range(i,a,b) for(i64 i=(a);(i<(b));(i)++)
+i64 max(i64 a, i64 b) { return a > b ? a : b; }
+i64 input() { i64 n; scanf("%lld", &n); return n; }
 
-int memo[100001] = {0};
-int arr[100001] = {0};
+i64 memo[100001] = {0};
+i64 arr[100001] = {0};
 
 int main() {
-    int n = input();
-    range(i, 0, n) { scanf("%d", &arr[i]); }
+    i64 n = input();
+    range(i, 0, n) { scanf("%lld", &arr[i]); }
 
     range(l, 0, n) {
-        int min = 2147483645;
+        i64 min = 100000000000;
 
         range(i, 0, n - l) {
-            int num = max(memo[i], arr[i + l]); // still n^2 :(
+            i64 num = max(memo[i], arr[i + l]); // still n^2 :(
             if(num < min) min = num;
             memo[i] = num;
         }
 
-        printf("%d\n", min);
+        printf("%lld\n", min);
     }
 }
 
