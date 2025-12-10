@@ -52,7 +52,6 @@ i64 is_valid(Vec2 a, Vec2 b) {
     return inside;
 }
 
-
 int main() {
     FILE *fp = fopen("adventofcode/day9.txt", "r");
     

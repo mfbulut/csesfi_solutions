@@ -1,19 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INF 10000000000
 typedef long long i64;
 #define range(i,a,b) for(i64 i=(a);(i<(b));(i)++)
 
-typedef struct {
-    i64 x, y;
-} Vec2;
-
-i64 area(Vec2 a, Vec2 b) {
-    i64 x = llabs(a.x - b.x) + 1;
-    i64 y = llabs(a.y - b.y) + 1;
-    return x*y;
-}
+typedef struct { i64 x, y; } Vec2;
+i64 area(Vec2 a, Vec2 b) { return (llabs(a.x - b.x) + 1) * (llabs(a.y - b.y) + 1); }
 
 Vec2 v[10000] = {0};
 
