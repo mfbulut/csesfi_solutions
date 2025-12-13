@@ -34,3 +34,42 @@ Output:
 21
 ```
 
+---
+
+Input:
+```
+21
+1 1
+1 2
+1 3
+1 4
+2 3
+2 4
+2 5
+3 5
+3 6
+3 7
+4 7
+4 8
+4 9
+1 10
+2 10
+3 10
+4 10
+1 12
+2 12
+3 12
+4 12
+
+```
+Output:
+```
+152
+```
+
+Explanation
+[Red 1, Red 2, Red 3, Red 4] [Blue 3, Blue 4, Blue 5] [Yellow 5, Yellow 6, Yellow 7] [Black 7, Black 8, Black 9, Black 10] [Red 10, Blue 10, Yellow 10] [Red 12, Blue 12, Yellow 12, Black 12]
+
+or
+
+[Red 1, Red 2, Red 3, Red 4] [Blue 3, Blue 4, Blue 5] [Yellow 5, Yellow 6, Yellow 7] [Black 7, Black 8, Black 9] [Red 10, Blue 10, Yellow 10, Black 10] [Red 12, Blue 12, Yellow 12, Black 12]

@@ -130,13 +130,14 @@ int main() {
             count++;
         }
     }
-    if(goal == 0) return 0;
+    if(goal == 0) {
+        printf("Sum %lld\n", sum);
+        return 0;
+    }
     
     printf("Goal: %lld\n", goal);
-    printf("%lld\n", find_buttons());
-    
+    printf("Min Press: %lld\n\n", find_buttons());
     sum += find_buttons();
-    printf("%lld\n", sum);
     
     goto start;
 }
