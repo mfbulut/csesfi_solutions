@@ -1,0 +1,13 @@
+[
+  {
+    "label": "Debug native binary",
+    "build": {
+      "command": "gcc template.c -g -o prog",
+      "args": [""],
+      "cwd": "$ZED_WORKTREE_ROOT"
+    },
+    "program": "$ZED_WORKTREE_ROOT/prog",
+    "request": "launch",
+    "adapter": "GDB"
+  }
+]
